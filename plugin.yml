@@ -1,0 +1,38 @@
+name: SmartSign
+main: cmdsign\SmartSign
+version: 1.3.0
+api: 3.0.0
+description: 木牌商店
+author: Acetylcholinsterase
+load: POSTWORLD
+
+commands:
+  buy:
+    description: "木牌商店买命令"
+    usage: "/buy <数量>"
+    permission: commandsign.use
+  sell:
+    description: "木牌商店出售命令"
+    usage: "/sell <数量>"
+    permission: commandsign.use
+  signshop:
+    description: "木牌商店管理命令"
+    usage: "/sshop <ID[:data]> <买入单价(不允许买可填-1)> <回收单价(不允许卖可填-1)> [商品名称]
+     /sshop <save|update|rearrange|comp>
+     注: save:立即保存 update:更新木牌  rearrange:重排  comp:切换感受态"
+    permission: commandsign.shop
+    aliases: ["sshop"]
+
+permissions:
+  commandsign.shop:
+    description: "创建/破坏/修改一个木牌商店"
+    default: op
+  commandsign.normal:
+    description: "创建/破坏/修改一个普通命令木牌"
+    default: "true"
+  commandsign.super:
+    description: "创建/破坏/修改一个超级命令木牌"
+    default: op
+  commandsign.use:
+    description: "使用一个普通命令木牌或木牌商店"
+    default: "true"
